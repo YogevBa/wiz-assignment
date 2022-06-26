@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import CollpaseableListItems from "../../components/collapseableItemList/CollapseableItemList"
+import Text from "../../components/text/Text"
 import TitleStripe from "../../components/titleStripe/TitleStripe"
 import { data } from '../../data'
 import './adminPage.css'
@@ -38,6 +39,9 @@ const AdminPage = (props: AdminPageProps) => {
         <div className='adminsPageContainer'>
             <TitleStripe title={pageData?.policyName || ''} handlePageData={handlePageData} Id={Id} />
             <CollpaseableListItems data={pageData} />
+            <button className='submitBtnStyle' onClick={() => { }}>
+                <Text text={'Approve'} primaryText />
+            </button >
         </div>
     )
 }
