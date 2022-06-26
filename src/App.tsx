@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import AdminPage from './pages/adminsPage/AdminPage';
+import CategoryPage from './pages/categoryPage/CategoryPage';
 
-function App() {
+type PageDataProps = {
+  pageName: string
+  id: number
+}
+const App = () => {
+  const [currentPage, setCurrentPage] = useState<PageDataProps>({ pageName: 'categoryPage', id: 0 })
+
+  const handlePageData = (pageName: string, id: number) => {
+    const pageData = { pageName, id }
+
+    pageData.pageName = pageName
+    pageData.id = id
+
+
+    setCurrentPage(pageData)
+  }
+
+  const pageManagement = currentPage.pageName === 'adminPage'
+    ? <AdminPage handlePageData={handlePageData} Id={currentPage.id} />
+    : <CategoryPage handlePageData={handlePageData} />
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='mainContainerStyles'>
+      {pageManagement}
     </div>
-  );
+  )
 }
 
 export default App;

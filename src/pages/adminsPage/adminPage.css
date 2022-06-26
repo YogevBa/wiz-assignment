@@ -1,0 +1,8 @@
+.adminsPageContainer {
+  width: 400px;
+  min-height: 500px;
+  background: white;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: column nowrap;
+}

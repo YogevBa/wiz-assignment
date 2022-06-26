@@ -1,0 +1,10 @@
+.CategoryPageStyles {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.appTitleStyle {
+  text-align: center;
+  font-size: 70px;
+  color: white;
+}

@@ -1,0 +1,12 @@
+.categoryItemStyles {
+  width: 200px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid black;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
